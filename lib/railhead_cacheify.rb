@@ -1,5 +1,6 @@
 require 'active_support'
 
+
 module RailheadCacheify
 
   def self.cache_store=(options)
@@ -24,6 +25,7 @@ module RailheadCacheify
   end
 
   module ClassMethods
+
     def cacheify(key, options = {})
       class_eval <<-END
         alias _original_#{key} #{key}
@@ -34,4 +36,22 @@ module RailheadCacheify
     end
   end
 end
+
+
+module RailheadCacheifyLoader
+
+  def self.included(base)
+    base.extend ClassMethods
+  end
+
+  module ClassMethods
+
+    def use_cacheify
+      include RailheadCacheify
+    end
+  end
+end
+
+
+ActiveRecord::Base.send :include, RailheadCacheifyLoader
 

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "railhead_cacheify"
-  s.version  = "0.0.1"
+  s.version  = "0.0.3"
   s.date     = "2010-08-22"
   s.summary  = "RailheadCacheify is a Ruby on Rails plugin that helps caching model functions."
   s.email    = "nagybence@tipogral.hu"
