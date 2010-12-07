@@ -15,11 +15,11 @@ module RailheadCacheify
     base.extend ClassMethods
     base.class_eval do
       def read_cache(key, options = {}, &block)
-       RailheadCacheify.cache.fetch("#{key}:#{self.class.name}:#{self.id}", options) { yield }
+        new_record? ? yield : RailheadCacheify.cache.fetch("#{key}:#{self.class.name}:#{self.id}", options) { yield }
       end
 
       def delete_cache(key)
-        RailheadCacheify.cache.delete("#{key}:#{self.class.name}:#{self.id}")
+        RailheadCacheify.cache.delete("#{key}:#{self.class.name}:#{self.id}") unless new_record?
       end
     end
   end
