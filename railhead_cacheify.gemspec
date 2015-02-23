@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.authors  = ["Bence Nagy"]
   s.files    = ["MIT-LICENSE",
                 "README.rdoc",
-                "init.rb",
                 "railhead_cacheify.gemspec",
                 "lib/railhead_cacheify.rb"]
   s.rdoc_options = ["--main", "README.rdoc"]
