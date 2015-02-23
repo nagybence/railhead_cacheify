@@ -30,7 +30,7 @@ module RailheadCacheify
       class_eval <<-END
         alias _original_#{key} #{key}
         def #{key}(*args)
-          @#{key} ||= read_cache(:#{key}, #{options[:expires_in] ? "{:expires_in => #{options[:expires_in]}}" : '{}'}) { _original_#{key}(*args) }
+          @#{key} ||= read_cache(:#{key}, #{options[:expires_in] ? "{expires_in: #{options[:expires_in]}}" : '{}'}) { _original_#{key}(*args) }
         end
       END
     end

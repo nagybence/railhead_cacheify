@@ -4,15 +4,10 @@ RailheadCacheify is a Ruby on Rails plugin that helps caching model functions.
 
 == Installation
 
-Installation is available as gem (recommended):
+Add to your Gemfile:
 
-  config.gem 'railhead_cacheify'
-
-Or as Rails plugin:
-
-  $ ruby script/plugin install git://github.com/nagybence/railhead_cacheify.git
+  gem 'railhead_cacheify'
 
 == License
 
-Copyright (c) 2010 Bence Nagy (nagybence@tipogral.hu), released under the MIT license.
-
+Copyright (c) 2010-2015 Bence Nagy (bence.nagy@gmail.com), released under the MIT license.
